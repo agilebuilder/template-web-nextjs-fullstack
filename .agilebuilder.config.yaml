@@ -1,0 +1,72 @@
+version: "1.0"
+name: nextjs-fullstack
+description: Next.js 15 App Router + TypeScript + Tailwind CSS 全栈应用模板
+variables:
+  enabled: true
+  delimiter: "%"
+  filePatterns:
+    mode: include
+    patterns:
+      - "package.json"
+      - "README.md"
+      - "AGENTS.md"
+      - ".env.example"
+      - "app/**/*.ts"
+      - "app/**/*.tsx"
+      - "components/**/*.tsx"
+      - "lib/**/*.ts"
+  inquirerQuestions:
+    - name: projectName
+      type: input
+      message: 项目名称（将作为包名与站点名）
+      default: demo-web
+      required: true
+    - name: description
+      type: input
+      message: 项目描述
+      default: 一个 Next.js 全栈应用
+    - name: author
+      type: input
+      message: 作者
+      default: ""
+    - name: port
+      type: number
+      message: 开发服务器端口
+      default: 3000
+    - name: packageManager
+      type: list
+      message: 包管理器
+      choices:
+        - pnpm
+        - npm
+        - yarn
+      default: pnpm
+hooks:
+  after_write:
+    scriptType: shell
+    script: git init && git add -A && git commit -m "chore: init project from template"
+    errorHandling: warn
+market:
+  slug: nextjs-fullstack
+  name: Next.js 全栈应用
+  summary: 基于 Next.js 15 App Router、TypeScript 与 Tailwind CSS 的全栈应用脚手架
+  description: |
+    ## 模板简介
+
+    一个开箱即用的 Next.js 15 全栈应用模板，采用 App Router 架构，内置：
+
+    - **App Router 示例结构**：根布局、首页、`/about` 示例路由
+    - **Route Handler**：`app/api/health/route.ts` 健康检查接口示例
+    - **组件示例**：服务端组件与客户端组件各一，演示两种渲染模式
+    - **SEO metadata**：基于 `lib/site.ts` 站点配置的统一 metadata 示例
+    - **工程规范**：ESLint、EditorConfig、环境变量示例、中文 README 与 AGENTS.md
+
+    生成项目后安装依赖即可运行 `npm run build` 通过完整构建。
+  category: 全栈应用
+  tags:
+    - Next.js
+    - React
+    - TypeScript
+    - Tailwind CSS
+    - 全栈
+  version: 1.0.0
