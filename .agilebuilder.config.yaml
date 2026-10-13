@@ -70,3 +70,18 @@ market:
     - Tailwind CSS
     - 全栈
   version: 1.0.0
+  gitUrl: https://github.com/agilebuilder/template-web-nextjs-fullstack.git
+  defaultBranch: main
+  englishMetadata:
+    name: Next.js full-stack app
+    summary: Next.js 15 App Router starter with TypeScript and Tailwind CSS.
+    description: A full-stack application starter with App Router pages, layouts and
+      API route handlers, shared components and centralized site settings.
+      Includes strict TypeScript and configurable package manager and server port.
+    category: Full-stack apps
+    tags:
+      - Next.js
+      - React
+      - TypeScript
+      - Tailwind CSS
+      - Full-stack
