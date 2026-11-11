@@ -1,49 +1,49 @@
 # AGENTS.md
 
-本文件为 AI 编码代理提供项目导航指南。
+Navigation guide for AI coding agents.
 
-## 项目概览
+## Project Overview
 
-<%= projectName %> —— <%= description %>。基于 Next.js 15 App Router + TypeScript + Tailwind CSS 的全栈应用。
+<%= projectName %> — <%= description %>. A full-stack app built on Next.js 15 App Router + TypeScript + Tailwind CSS.
 
-## 目录结构与约定
+## Directory Structure and Conventions
 
-- `app/`：App Router 路由。每个子目录是一个路由段，`page.tsx` 是页面，`layout.tsx` 是布局，`route.ts` 是 API Route Handler。
-  - `app/layout.tsx`：根布局，导出全局 `metadata`（SEO），数据来自 `lib/site.ts`。
-  - `app/api/health/route.ts`：API 示例，新增接口时在 `app/api/` 下建目录并导出 `GET`/`POST` 等函数。
-- `components/`：共享 React 组件。默认是服务端组件；需要交互（useState、事件）时在文件顶部加 `"use client"`。
-- `lib/`：非 UI 代码。`site.ts` 是站点配置的单一事实来源，`utils.ts` 放通用工具函数。
-- 路径别名：`@/*` 映射到项目根（如 `@/lib/site`），导入时优先使用别名。
+- `app/`: App Router routes. Each subdirectory is a route segment; `page.tsx` is a page, `layout.tsx` is a layout, `route.ts` is an API Route Handler.
+  - `app/layout.tsx`: root layout exporting global `metadata` (SEO), sourced from `lib/site.ts`.
+  - `app/api/health/route.ts`: API example; for new endpoints create a directory under `app/api/` and export `GET`/`POST`/etc. handlers.
+- `components/`: shared React components. Server components by default; add `"use client"` at the top when interactivity is needed (useState, events).
+- `lib/`: non-UI code. `site.ts` is the single source of truth for site settings; `utils.ts` holds shared utilities.
+- Path alias: `@/*` maps to the project root (e.g. `@/lib/site`); prefer the alias in imports.
 
-## 编码约定
+## Coding Conventions
 
-- TypeScript 严格模式；避免 `any`。
-- 组件使用默认导出（`export default function Xxx()`），与现有文件保持一致。
-- 样式一律使用 Tailwind CSS 工具类，不写内联 style 或额外 CSS 文件。
-- 文案使用中文，`lang="zh-CN"`。
-- 不添加未在 package.json 中声明的依赖；确有需要时先说明理由。
+- TypeScript strict mode; avoid `any`.
+- Components use default exports (`export default function Xxx()`), consistent with existing files.
+- Style with Tailwind CSS utility classes only; no inline styles or extra CSS files.
+- UI copy is written in English and the document language is `lang="en"`.
+- Do not add dependencies not declared in package.json; explain the reason first if one is truly needed.
 
-## 常用命令
+## Common Commands
 
 ```bash
 <% if (packageManager === 'pnpm') { -%>
-pnpm dev        # 开发服务器（端口 <%= port %>）
-pnpm build      # 生产构建（含 lint 与类型检查）
-pnpm start      # 生产服务器
+pnpm dev        # dev server (port <%= port %>)
+pnpm build      # production build (includes lint and type check)
+pnpm start      # production server
 pnpm lint       # ESLint
 <% } else if (packageManager === 'yarn') { -%>
-yarn dev        # 开发服务器（端口 <%= port %>）
-yarn build      # 生产构建（含 lint 与类型检查）
-yarn start      # 生产服务器
+yarn dev        # dev server (port <%= port %>)
+yarn build      # production build (includes lint and type check)
+yarn start      # production server
 yarn lint       # ESLint
 <% } else { -%>
-npm run dev     # 开发服务器（端口 <%= port %>）
-npm run build   # 生产构建（含 lint 与类型检查）
-npm run start   # 生产服务器
+npm run dev     # dev server (port <%= port %>)
+npm run build   # production build (includes lint and type check)
+npm run start   # production server
 npm run lint    # ESLint
 <% } -%>
 ```
 
-## 验证改动
+## Verifying Changes
 
-提交前运行 `build` 命令确认 lint 与类型检查全部通过。
+Run the `build` command before committing to confirm lint and type checks pass.

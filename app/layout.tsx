@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   authors: siteConfig.author ? [{ name: siteConfig.author }] : undefined,
   openGraph: {
     type: "website",
-    locale: "zh_CN",
+    locale: "en_US",
     siteName: siteConfig.name,
     title: siteConfig.name,
     description: siteConfig.description,
@@ -24,7 +24,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="zh-CN">
+    <html lang="en">
       <body className="min-h-screen bg-white text-slate-900 antialiased">
         <SiteHeader />
         <main className="mx-auto w-full max-w-3xl px-6 py-12">{children}</main>

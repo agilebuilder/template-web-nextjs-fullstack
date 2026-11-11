@@ -2,8 +2,8 @@ import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 
 const navItems = [
-  { href: "/", label: "首页" },
-  { href: "/about", label: "关于" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
 ];
 
 export default function SiteHeader() {
