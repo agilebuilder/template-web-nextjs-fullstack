@@ -49,40 +49,49 @@ hooks:
     errorHandling: warn
 market:
   slug: nextjs-fullstack
-  name: Next.js 全栈应用
-  summary: 基于 Next.js 15 App Router、TypeScript 与 Tailwind CSS 的全栈应用脚手架
+  name: Next.js full-stack app
+  summary: Next.js 15 App Router starter with TypeScript and Tailwind CSS.
   description: |
-    ## 模板简介
+    ## Overview
 
-    一个开箱即用的 Next.js 15 全栈应用模板，采用 App Router 架构，内置：
+    A ready-to-use Next.js 15 full-stack app template on the App Router, with:
 
-    - **App Router 示例结构**：根布局、首页、`/about` 示例路由
-    - **Route Handler**：`app/api/health/route.ts` 健康检查接口示例
-    - **组件示例**：服务端组件与客户端组件各一，演示两种渲染模式
-    - **SEO metadata**：基于 `lib/site.ts` 站点配置的统一 metadata 示例
-    - **工程规范**：ESLint、EditorConfig、环境变量示例、英文优先的双语 README 与 AGENTS.md
+    - **App Router example structure**: root layout, home page and an `/about` example route
+    - **Route Handler**: `app/api/health/route.ts` health check example
+    - **Component examples**: one server component and one client component demonstrating both rendering modes
+    - **SEO metadata**: unified metadata driven by the `lib/site.ts` site config
+    - **Tooling**: ESLint, EditorConfig, environment variable example, and an English-first bilingual README and AGENTS.md
 
-    生成项目后安装依赖即可运行 `npm run build` 通过完整构建。
-  category: 全栈应用
+    After generation, `npm run build` passes a full build once dependencies are installed.
+  category: Full-stack apps
   tags:
     - Next.js
     - React
     - TypeScript
     - Tailwind CSS
-    - 全栈
+    - Full-stack
   version: 1.0.0
   gitUrl: https://github.com/agilebuilder/template-web-nextjs-fullstack.git
   defaultBranch: main
-  englishMetadata:
-    name: Next.js full-stack app
-    summary: Next.js 15 App Router starter with TypeScript and Tailwind CSS.
-    description: A full-stack application starter with App Router pages, layouts and
-      API route handlers, shared components and centralized site settings.
-      Includes strict TypeScript and configurable package manager and server port.
-    category: Full-stack apps
+  metadata-zh:
+    name: Next.js 全栈应用
+    summary: 基于 Next.js 15 App Router、TypeScript 与 Tailwind CSS 的全栈应用脚手架
+    description: |
+      ## 模板简介
+
+      一个开箱即用的 Next.js 15 全栈应用模板，采用 App Router 架构，内置：
+
+      - **App Router 示例结构**：根布局、首页、`/about` 示例路由
+      - **Route Handler**：`app/api/health/route.ts` 健康检查接口示例
+      - **组件示例**：服务端组件与客户端组件各一，演示两种渲染模式
+      - **SEO metadata**：基于 `lib/site.ts` 站点配置的统一 metadata 示例
+      - **工程规范**：ESLint、EditorConfig、环境变量示例、英文优先的双语 README 与 AGENTS.md
+
+      生成项目后安装依赖即可运行 `npm run build` 通过完整构建。
+    category: 全栈应用
     tags:
       - Next.js
       - React
       - TypeScript
       - Tailwind CSS
-      - Full-stack
+      - 全栈
